@@ -7,7 +7,7 @@ import javax.swing.event.*;
 
 public class MainPanel extends JPanel implements View
 {  
-    private DefaultListModel<String> model = new DefaultListModel<String>();
+    private DefaultListModel model = new DefaultListModel();
     private JList list = new JList(model);
     private JTextField name = new JTextField(9);
     private JTextField start = new JTextField(9);
@@ -100,7 +100,7 @@ public class MainPanel extends JPanel implements View
                 return;
             Boat boat = boats.boat(list.getSelectedIndex());
             boat.book(name.getText(), Integer.parseInt(start.getText()), Integer.parseInt(end.getText()));;
-            //clear();
+            clear();
         }
     }
 }
