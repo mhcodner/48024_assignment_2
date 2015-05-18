@@ -21,6 +21,7 @@ public class BoatWindow extends JFrame
     {
         setLocation(800, 500 + (_boat.id() - 1) * 150);
         setTitle("Boat " + _boat.id());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
         
     private void build(Boat boat)

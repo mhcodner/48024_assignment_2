@@ -21,6 +21,7 @@ public class Root extends JFrame
     private void setup()
     {
         setLocation(500, 500);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
         
     private void build(Boats boats)
