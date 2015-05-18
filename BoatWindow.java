@@ -6,19 +6,26 @@ import javax.swing.table.*;
 
 public class BoatWindow extends JFrame
 {  
+    private Boat _boat;
+    
     public BoatWindow(Boat boat)
     {
-        
+        this._boat = boat;
+        setup();
+        build(_boat);
+        pack();
+        setVisible(true);
     }
         
     private void setup()
     {
-        
+        setLocation(800, 500 + (_boat.id() - 1) * 150);
+        setTitle("Boat " + _boat.id());
     }
         
     private void build(Boat boat)
     {
-        
+        add(new BoatPanel(boat));
     }
     
     private class BoatPanel extends JPanel
@@ -29,7 +36,7 @@ public class BoatWindow extends JFrame
         
         public BoatPanel(Boat boat)
         {
-            
+            this.boat = boat;
         }
     
         private void setup()
