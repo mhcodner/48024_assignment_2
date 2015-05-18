@@ -12,6 +12,8 @@ public class Viewable
     {   views.remove(view); }
                 
     public void update()
-    {   for (View view: views)
-            view.update(); }
+    {   
+        for (View view: views)
+            view.update(); 
+        }
 }

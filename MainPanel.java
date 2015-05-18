@@ -99,8 +99,7 @@ public class MainPanel extends JPanel implements View
             if (list.getSelectedIndex() == -1)
                 return;
             Boat boat = boats.boat(list.getSelectedIndex());
-            boat.book(name.getText(), Integer.parseInt(start.getText()), Integer.parseInt(end.getText()));
-            update();
+            boat.book(name.getText(), Integer.parseInt(start.getText()), Integer.parseInt(end.getText()));;
             //clear();
         }
     }

@@ -29,7 +29,7 @@ public class BoatWindow extends JFrame
         add(new BoatPanel(boat));
     }
     
-    private class BoatPanel extends JPanel
+    private class BoatPanel extends JPanel implements View
     {  
         private Boat boat;
         private BoatTable model;
@@ -38,6 +38,14 @@ public class BoatWindow extends JFrame
         public BoatPanel(Boat boat)
         {
             this.boat = boat;
+            this.boat.attach(this);
+            
+            setup();
+            build();
+        }
+        
+        public void update()
+        {
             setup();
             build();
         }
@@ -56,7 +64,6 @@ public class BoatWindow extends JFrame
             table.getColumnModel().getColumn(0).setPreferredWidth(30);
             table.getColumnModel().getColumn(1).setPreferredWidth(100);
             table.getColumnModel().getColumn(2).setPreferredWidth(100);
-            
         }
         
         private void build()

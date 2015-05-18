@@ -16,7 +16,10 @@ public class Boat extends Viewable
     {   return this.id == id;  }
     
     public void book(String name, int start, int end)
-    {   passengers.add(new Person(name, start, end));   }
+    {   
+        passengers.add(new Person(name, start, end));   
+        update();
+    }
              
     public String on(int i)
     {   String s = "";
