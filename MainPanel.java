@@ -22,7 +22,10 @@ public class MainPanel extends JPanel
         
     private void setup()
     {
-        
+        setBorder(BorderFactory.createLineBorder(Color.blue));
+        setSize(name, 100);
+        setSize(start, 50);
+        setSize(end, 50);
     }
         
     private void setSize(JComponent c, int x)
@@ -34,22 +37,43 @@ public class MainPanel extends JPanel
     
     private void build()
     {
-        
+        Box box = Box.createHorizontalBox();
+        box.add(inputBox());
+        box.add(Box.createHorizontalStrut(30));
+        //box.add(theList());
+        add(box);
     }
         
     private Box inputBox()
     {  
-        return null;
+        Box box = Box.createVerticalBox();
+        box.add(pair("Name",  name));
+        box.add(pair("Start",  start));
+        box.add(pair("End",  end));
+        return box;
     }
         
     private JList theList()
     {   
         return null;
     }
+    
+    private Box pair(String label, JTextField field)
+    {
+        Box box = Box.createHorizontalBox();
+        box.add(new JLabel(label));
+        box.add(Box.createHorizontalStrut(10));
+        box.add(field);
+        box.add(Box.createHorizontalStrut(5));
+        return box;
+    }
         
     private void clear()
     {
-        
+        name.setText("");
+        start.setText("");
+        end.setText("");
+        list.clearSelection();
     }
         
     private class Listener implements ListSelectionListener

@@ -20,11 +20,11 @@ public class Root extends JFrame
         
     private void setup()
     {
-        
+        setLocation(500, 500);
     }
         
     private void build(Boats boats)
     {
-        
+        add(new MainPanel(boats));
     }
 }
