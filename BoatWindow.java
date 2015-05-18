@@ -49,12 +49,12 @@ public class BoatWindow extends JFrame
                 
             public String getColumnName(int col)
             {
-                return "er";
+                return columnNames[col];
             }
             
             public int getRowCount()
             {
-                return 0;
+                return boat.stops();
             }
             
             public int getColumnCount()
@@ -64,6 +64,7 @@ public class BoatWindow extends JFrame
             
             public Object getValueAt(int row, int col)
             {
+                
                 return null;
             }
         }

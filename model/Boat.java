@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public class Boat
+public class Boat extends Viewable
 {   private int id;
     private int stops;
     private LinkedList<Person> passengers = new LinkedList<Person>();
