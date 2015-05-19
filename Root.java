@@ -29,5 +29,6 @@ public class Root extends JFrame
         add(new MainPanel(boats));
         for (Boat boat: boats.boats())
             new BoatWindow(boat);
+        new ClientWindow();
     }
 }

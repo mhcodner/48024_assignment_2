@@ -1,6 +1,7 @@
 import model.*;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
@@ -68,10 +69,41 @@ public class BoatWindow extends JFrame
         
         private void build()
         {
-            Box box = Box.createVerticalBox();
-            box.add(table.getTableHeader());
-            box.add(table);
-            add(box);
+            Box mainBox = Box.createHorizontalBox();
+            
+            Box tableBox = Box.createVerticalBox();
+            tableBox.add(table.getTableHeader());
+            tableBox.add(table);
+            mainBox.add(tableBox);
+            
+            Box buttonBox = Box.createVerticalBox();
+            buttonBox.add(Box.createHorizontalStrut(10));
+            JButton goButton = new JButton("GO");
+            Listener listener = new Listener();
+            listener.setBoat(boat);
+            goButton.addActionListener(listener);
+            buttonBox.add( Box.createVerticalGlue() );
+            buttonBox.add(goButton);
+            buttonBox.add( Box.createVerticalGlue() );
+            mainBox.add(buttonBox);
+            
+            add(mainBox);
+        }
+        
+        private class Listener implements ActionListener
+        {
+            private Boat boat;
+            
+            public void setBoat(Boat boat)
+            {
+                this.boat = boat;
+            }
+            
+            public void actionPerformed(ActionEvent e)
+            {
+                //boat.go();
+                update();
+            }
         }
     
         private class BoatTable extends AbstractTableModel
