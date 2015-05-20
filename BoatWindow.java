@@ -76,16 +76,16 @@ public class BoatWindow extends JFrame
             tableBox.add(table);
             mainBox.add(tableBox);
             
-            Box buttonBox = Box.createVerticalBox();
-            buttonBox.add(Box.createHorizontalStrut(10));
+            //Box buttonBox = Box.createVerticalBox();
+            mainBox.add(Box.createHorizontalStrut(5));
             JButton goButton = new JButton("GO");
             Listener listener = new Listener();
             listener.setBoat(boat);
             goButton.addActionListener(listener);
-            buttonBox.add( Box.createVerticalGlue() );
-            buttonBox.add(goButton);
-            buttonBox.add( Box.createVerticalGlue() );
-            mainBox.add(buttonBox);
+            //buttonBox.add( Box.createVerticalGlue() );
+            mainBox.add(goButton);
+            //buttonBox.add( Box.createVerticalGlue() );
+            //mainBox.add(buttonBox);
             
             add(mainBox);
         }
