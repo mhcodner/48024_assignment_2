@@ -101,7 +101,7 @@ public class BoatWindow extends JFrame
             
             public void actionPerformed(ActionEvent e)
             {
-                //boat.go();
+                boat.go();
                 update();
             }
         }

@@ -79,7 +79,7 @@ public class ClientWindow extends JFrame
             
             public int getRowCount()
             {
-                return 4;
+                return Client.all().size();
             }
             
             public int getColumnCount()
@@ -89,9 +89,11 @@ public class ClientWindow extends JFrame
             
             public Object getValueAt(int row, int col)
             {
+                Client client = Client.all().get(row);
+                
                 switch(col) {
-                    case 0: return ""; //client.name
-                    case 1: return ""; //client.cash
+                    case 0: return client.name;
+                    case 1: return client.money;
                 }
                 
                 return "";

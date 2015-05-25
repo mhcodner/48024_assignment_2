@@ -22,22 +22,46 @@ public class Boat extends Viewable
     }
              
     public String on(int i)
-    {   String s = "";
+    {   
+        String s = "";
+        
         for (Person person: passengers)
             if (person.getsOn(i))
                 s += person.name() + " ";
-        return s;  }
+                
+        return s;  
+    }
         
     public String off(int i)
-    {   String s = "";
+    {   
+        String s = "";
         for (Person person: passengers)
             if (person.getsOff(i))
                 s += person.name() + " ";
-        return s;   }
+        return s;   
+    }
                 
     public int id()
     {   return id;  }
     
     public int stops()
     {   return stops;  }
+    
+    public void go()
+    {
+        int i = 0;
+        // for each stop
+        for (i = 0; i < this.stops; i++)
+        {
+            // find the clients on this stop
+            chargePassengersOnStop(i);
+        }
+    }
+    
+    public void chargePassengersOnStop(int stop){
+        for (Person person: this.passengers) 
+        {
+            
+        }
+    }
 }
