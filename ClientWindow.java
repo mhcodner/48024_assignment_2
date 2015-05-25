@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import java.util.*;
+import java.text.DecimalFormat;
 
 public class ClientWindow extends JFrame
 {
@@ -56,7 +57,7 @@ public class ClientWindow extends JFrame
             table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             
             table.getColumnModel().getColumn(0).setPreferredWidth(100);
-            table.getColumnModel().getColumn(1).setPreferredWidth(80);
+            table.getColumnModel().getColumn(1).setPreferredWidth(70);
         }
         
         private void build()
@@ -92,8 +93,8 @@ public class ClientWindow extends JFrame
                 Client client = Client.all().get(row);
                 
                 switch(col) {
-                    case 0: return client.name;
-                    case 1: return client.money;
+                    case 0: return "    " + client.name;
+                    case 1: return "  $" + new DecimalFormat("#.00").format(client.money);
                 }
                 
                 return "";
