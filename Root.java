@@ -1,3 +1,6 @@
+// 11989668 Michael Codner
+// 12147221 Gareth Stokes
+
 import model.*;
 
 import java.awt.*;
@@ -29,6 +32,6 @@ public class Root extends JFrame
         add(new MainPanel(boats));
         for (Boat boat: boats.boats())
             new BoatWindow(boat);
-        new ClientWindow();
+        new ClientWindow(boats);
     }
 }

@@ -59,9 +59,25 @@ public class Boat extends Viewable
     }
     
     public void chargePassengersOnStop(int stop){
+        LinkedList<Client> clientsOnStop = new LinkedList<Client>();
+
         for (Person person: this.passengers) 
         {
-            
+            if (person.isOn(stop))
+            {
+                Client client = Client.findByName(person.name());
+                clientsOnStop.add(client);
+            }
         }
+        
+        double chargeAmount = (this.rate / clientsOnStop.size());
+        
+        // charge them monies
+        for (Client client: clientsOnStop)
+        {
+            client.charge(chargeAmount);
+        }
+        
+        update();
     }
 }

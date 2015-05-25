@@ -12,6 +12,21 @@ public class Client
         this.money = money;
     }
     
+    public void charge(double amount)
+    {
+        this.money -= amount;
+    }
+    
+    public static Client findByName(String name)
+    {
+        for(Client client: all())
+        {
+            if (client.name.equals(name)) return client;
+        }
+        
+        return null;
+    }
+    
     private static LinkedList<Client> store = null;
     public static LinkedList<Client> all()
     {

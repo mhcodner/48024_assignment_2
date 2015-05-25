@@ -9,8 +9,12 @@ import java.text.DecimalFormat;
 
 public class ClientWindow extends JFrame
 {
-    public ClientWindow()
+    private Boats boats;
+    
+    public ClientWindow(Boats boats)
     {
+        this.boats = boats;
+        
         setup();
         build();
         pack();
@@ -26,7 +30,7 @@ public class ClientWindow extends JFrame
     
     private void build()
     {
-        add(new ClientPanel());
+        add(new ClientPanel(this.boats));
     }
     
     private class ClientPanel extends JPanel implements View
@@ -34,8 +38,12 @@ public class ClientWindow extends JFrame
         private ClientTable model;
         private JTable table;
         
-        public ClientPanel()
+        
+        public ClientPanel(Boats boats)
         {
+            for (Boat boat: boats.boats())
+                boat.attach(this);
+            
             setup();
             build();
         }

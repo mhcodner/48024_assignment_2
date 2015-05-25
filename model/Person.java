@@ -19,7 +19,9 @@ public class Person
     {   return end == stop;  }
     
     public boolean isOn(int stop)
-    {   return (start < stop) && (end >= stop); }
+    {   
+        return (start <= stop) && (end >= stop); 
+    }
         
     public String name()
     {   return name;    }
