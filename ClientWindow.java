@@ -59,8 +59,9 @@ public class ClientWindow extends JFrame
             model = new ClientTable();
             table = new JTable(model);
             
-            setBorder(BorderFactory.createLineBorder(Color.red));
+            //setBorder(BorderFactory.createLineBorder(Color.red));
             table.setBorder(BorderFactory.createLineBorder(Color.red));
+            table.getTableHeader().setBorder(BorderFactory.createLineBorder(Color.red));
             
             table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             
